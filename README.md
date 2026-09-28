@@ -15,13 +15,16 @@ Clone the repository:
 git clone https://github.com/Sammie1875/deeplearners-toolkit.git
 cd deeplearners-toolkit
 
+```
+
 Install dependencies:
 
 python -m pip install numpy pytest
 
-📁 Project Structure
 
-deeplearners-toolkit/
+## 📁 Project Structure
+
+```deeplearners-toolkit/
 │
 ├── deeplearners_toolkit/
 │   ├── io.py                 # Data loading
@@ -39,9 +42,10 @@ deeplearners-toolkit/
 ├── demo/quickstart.ipynb     # End‑to‑end demonstration
 └── README.md
 
-🚀 Quickstart Example
+```
+## 🚀 Quickstart Example
 
-import numpy as np
+```import numpy as np
 
 from deeplearners_toolkit.io import read_csv
 from deeplearners_toolkit.preprocessing import StandardScaler
@@ -82,10 +86,12 @@ pipeline = Pipeline([StandardScaler()])
 output = pipeline.fit_transform(data)
 print("Pipeline output:", output)
 
+```
+
+## 🧪 Running Tests
 
 
-🧪 Running Tests
-python -m pytest tests/
+python -m pytest tests/ 
 
 
 👥 Team Responsibilities
@@ -113,7 +119,7 @@ optim.py
 pipeline.py
 Integration + packaging
 
-📄 Documentation
+## 📄 Documentation
 Full project documentation is available in:
 
 docs/project_documentation.md
@@ -130,7 +136,7 @@ Documentation
 4‑page report
 5‑minute demo video
 
-📄 License
+## 📄 License
 This project is for educational use as part of the University of Adelaide Scientific Computing assignment.
 
 
