@@ -1,14 +1,7 @@
 
 import numpy as np
-import sys
-import os
-
-# Get the directory of the current script, then add the target folder
-# (e.g., if your module is in the parent directory)
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-from deeplearners_toolkit.pipeline import Pipeline
-from deeplearners_toolkit.preprocessing import (
+from numcompute.pipeline import Pipeline
+from numcompute.preprocessing import (
     StandardScaler,
     MinMaxScaler,
     OneHotEncoder,

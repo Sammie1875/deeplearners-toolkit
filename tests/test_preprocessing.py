@@ -1,5 +1,5 @@
 import numpy as np
-from deeplearners_toolkit.preprocessing import StandardScaler, MinMaxScaler, OneHotEncoder
+from numcompute.preprocessing import StandardScaler, MinMaxScaler, OneHotEncoder
 
 
 # ---------------------------------------------------------
