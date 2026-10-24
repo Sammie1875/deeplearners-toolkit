@@ -1,7 +1,7 @@
 import numpy as np
 import pytest
 
-from deeplearners_toolkit.metrics import (
+from numcompute.metrics import (
     accuracy,
     confusion_matrix,
     precision,

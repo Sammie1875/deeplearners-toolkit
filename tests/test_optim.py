@@ -1,14 +1,6 @@
 
 import numpy as np
-import sys
-import os
-
-# Get the directory of the current script, then add the target folder
-# (e.g., if your module is in the parent directory)
-sys.path.append(os.path.abspath(os.path.join(os.path.dirname(__file__), '..')))
-
-
-from deeplearners_toolkit.optim import gradient, jacobian
+from numcompute.optim import gradient, jacobian
 
 
 # -------------------------

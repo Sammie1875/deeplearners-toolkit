@@ -1,5 +1,5 @@
 import numpy as np
-from deeplearners_toolkit.io import read_csv
+from numcompute.io import read_csv
 
 def test_read_csv_basic():
     # Load a sample CSV file using our custom reader

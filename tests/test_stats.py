@@ -1,6 +1,6 @@
 import numpy as np
 
-from deeplearners_toolkit.stats import (
+from numcompute.stats import (
     mean,
     median,
     std,
