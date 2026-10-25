@@ -342,7 +342,8 @@ For a pipeline with \(s\) preprocessing steps, its complexity is the sum of the 
 
 These estimates describe algorithmic growth, not measured execution speed. Benchmark results should be reported separately with the machine, Python version, NumPy version, input sizes, and benchmark method.
 
-### Team Work Split
+
+## Team Work Split
 
 | Team Member | Tasks Done |
 |---|---|
