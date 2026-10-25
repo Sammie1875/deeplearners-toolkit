@@ -341,3 +341,12 @@ For a pipeline with \(s\) preprocessing steps, its complexity is the sum of the 
 | `predict()` | Sum of preprocessing transform costs and estimator prediction cost | Depends on intermediate arrays and predictions |
 
 These estimates describe algorithmic growth, not measured execution speed. Benchmark results should be reported separately with the machine, Python version, NumPy version, input sizes, and benchmark method.
+
+### Team Work Split
+
+| Team Member | Tasks Done |
+|---|---|
+| Sameena Shafiulla Khan | Setup the initial git repo. Implemented `io.py` (CSV/data loading) and `preprocessing.py` (`StandardScaler`, `MinMaxScaler`, `OneHotEncoder`); wrote unit tests for both modules; contributed to README and documentation. |
+| Veeksha Nakka | Implemented `stats.py` (statistical functions and NaN handling), `metrics.py` (classification and regression metrics), and `benchmarking.py`; wrote unit tests for these modules and prepared benchmark results. |
+| Krishna Kumar Siraimeetan | Implemented `rank.py` (ranking methods, tie handling, and percentiles) and `utils.py`; wrote unit tests for these modules and created `demo/quickstart.ipynb` after module integration. |
+| Aakash Rajan | Implemented `sort_search.py` (sorting, searching, Top-K, and quickselect), `optim.py` (finite-difference gradients and Jacobians), and `pipeline.py`; wrote unit tests for these modules. Contributed to final integration and package setup, README, documentation and demo video |
