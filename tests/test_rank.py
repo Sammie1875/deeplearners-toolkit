@@ -183,8 +183,6 @@ def test_invalid_nan_policy():
 def test_large_integer_values_remain_distinct():
     values = [2**53, 2**53 + 1]
     np.testing.assert_array_equal(rankdata(values), [1, 2])
-
-
 def test_infinity_ranking():
     result = rankdata([-np.inf, 5, np.inf])
     np.testing.assert_array_equal(result, [1, 2, 3])
