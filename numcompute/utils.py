@@ -37,46 +37,61 @@ def as_numeric_array(
     dtype=None,
     allow_complex=False,
 ):
-    """Convert supported input into a validated NumPy numeric array."""
+    """
+    Convert supported input into a NumPy numeric array.
+
+    Parameters
+    ----------
+    values : array-like
+        Input values such as a list, tuple or NumPy array.
+
+    name : str, default="values"
+        Name used in error messages.
+
+    dtype : NumPy dtype or None, default=None
+        Optional output dtype. If None, preserve the inferred
+        numeric dtype where possible.
+
+    allow_complex : bool, default=False
+        Whether complex-valued numeric arrays are accepted.
+
+    Returns
+    -------
+    np.ndarray
+        A validated numeric array.
+
+    Raises
+    ------
+    TypeError
+        If the input is nonnumeric or has an unsupported dtype.
+
+    Examples
+    --------
+    >>> as_numeric_array([1, 2, 3])
+    array([1, 2, 3])
+
+    >>> as_numeric_array([1.5, 2.5])
+    array([1.5, 2.5])
+    """
     try:
-        # Validate the original input before any dtype conversion.
-        arr = np.asarray(values)
+        arr = np.asarray(values, dtype=dtype)
     except (TypeError, ValueError, OverflowError) as exc:
         raise TypeError(
             f"{name} must be convertible to a numeric array"
         ) from exc
 
-    # Reject strings, objects, Boolean arrays and nonnumeric types.
+    # Reject strings, objects, Boolean arrays and other
+    # nonnumeric types. Boolean data are not treated as numbers
+    # by this toolkit's general numerical API.
     if not np.issubdtype(arr.dtype, np.number):
         raise TypeError(f"{name} must contain numeric values")
 
-    if (
-        not allow_complex
-        and np.issubdtype(arr.dtype, np.complexfloating)
+    if not allow_complex and np.issubdtype(
+        arr.dtype, np.complexfloating
     ):
         raise TypeError(
             f"{name} must contain real values, not complex values"
         )
-
-    # Convert only after validating the original input.
-    if dtype is not None:
-        try:
-            arr = arr.astype(dtype)
-        except (TypeError, ValueError, OverflowError) as exc:
-            raise TypeError(
-                f"{name} cannot be converted to dtype {dtype}"
-            ) from exc
-
-        if not np.issubdtype(arr.dtype, np.number):
-            raise TypeError(f"{name} must contain numeric values")
-
-        if (
-            not allow_complex
-            and np.issubdtype(arr.dtype, np.complexfloating)
-        ):
-            raise TypeError(
-                f"{name} must contain real values, not complex values"
-            )
 
     return arr
 
