@@ -2,7 +2,7 @@
 import numpy as np
 import pytest
 
-from rank import rankdata, percentile_rank
+from numcompute.rank import rankdata, percentile_rank
 
 
 def test_average_ranking_with_ties():
