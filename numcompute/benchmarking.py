@@ -2,9 +2,9 @@
 import time
 import numpy as np
 
-from deeplearners_toolkit.stats import mean
-from deeplearners_toolkit.metrics import mse
-from deeplearners_toolkit.preprocessing import StandardScaler
+from numcompute.stats import mean
+from numcompute.metrics import mse
+from numcompute.preprocessing import StandardScaler
 
 
 # Python loop versions used only for benchmarking
