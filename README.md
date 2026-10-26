@@ -342,6 +342,35 @@ For a pipeline with \(s\) preprocessing steps, its complexity is the sum of the 
 
 These estimates describe algorithmic growth, not measured execution speed. Benchmark results should be reported separately with the machine, Python version, NumPy version, input sizes, and benchmark method.
 
+## Performance Benchmarking
+
+We compared the performance of NumPy-based vectorised operations against equivalent Python-loop implementations. Three operations were selected for benchmarking: Mean, Mean Squared Error (MSE), and StandardScaler.
+
+The experiments used a fixed random seed of 42 for reproducibility. Each operation was warmed up before performing five timed runs, and the median execution time was recorded.
+
+### Benchmark Results
+
+| Operation | Elements | Python Loop (ms) | NumPy (ms) | Speedup |
+|---|---:|---:|---:|---:|
+| Mean | 100,000 | 7.0359 | 0.4829 | 14.57× |
+| MSE | 100,000 | 22.0071 | 0.3809 | 57.78× |
+| StandardScaler | 50,000 | 29.0550 | 0.7463 | 38.93× |
+
+### Observations
+
+All three NumPy implementations were faster than their Python-loop equivalents. MSE achieved the highest speedup of 57.78×, followed by StandardScaler at 38.93× and Mean at 14.57×.
+
+These results highlight the advantages of vectorised numerical operations for the tested input sizes. Execution times may vary depending on the hardware and software environment.
+
+### Running the Benchmarks
+
+Run the following command from the project root:
+
+```bash
+python -m numcompute.benchmarking
+```
+
+The script generates reproducible input data, measures execution times and prints a comparison table.
 
 ## Team Work Split
 
