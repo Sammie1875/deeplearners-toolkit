@@ -3,7 +3,7 @@
 import numpy as np
 import pytest
 
-from utils import (
+from numcompute.utils import (
     as_numeric_array,
     validate_array,
     check_finite,
